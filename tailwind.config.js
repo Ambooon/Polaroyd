@@ -18,7 +18,10 @@ export default {
           4: "#555555",
         },
         // Important actions upload, share
-        myRed: "#FF6347",
+        myRed: {
+          1: "#FF6347",
+          2: "#F52500",
+        },
         // Buttons, icons and interactive
         myYellow: "#FFD700",
         
