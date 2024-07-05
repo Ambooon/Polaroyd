@@ -12,7 +12,7 @@ type ProfileCardProp = {
 
 export default function ProfileCard({ data }: ProfileCardProp) {
   return (
-    <div className='w-72 min-h-80 max-h-fit rounded-xl overflow-hidden bg-slate-100'>
+    <div className='w-72 min-h-80 max-h-fit rounded-xl overflow-hidden bg-white'>
       <img
         className='w-full h-16 object-cover object-center'
         src={data.bannerPicture}
