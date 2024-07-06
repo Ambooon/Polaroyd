@@ -1,6 +1,6 @@
 export default function FollowCard() {
   return (
-    <div className='w-72 p-4 rounded-xl overflow-hidden bg-white'>
+    <div className='max-w-72 p-4 rounded-xl overflow-hidden bg-white'>
       <h1 className='font-bold mb-4'>Who is to follow you</h1>
       <FollowItem
         data={{

@@ -12,7 +12,7 @@ type PictureFrameProp = {
 
 export default function PictureFrame({ data }: PictureFrameProp) {
   return (
-    <div className='max-w-80 p-4 bg-white break-inside-avoid-column h-fit mb-4 shadow-md'>
+    <div className='max-w-80 p-4 bg-white break-inside-avoid-column h-fit shadow-md'>
       <div className='flex justify-between items-center mb-2'>
         <div className='flex items-center gap-2'>
           <img

@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom';
+
 type ProfileCardProp = {
   data: {
     bannerPicture: string;
@@ -30,16 +32,21 @@ export default function ProfileCard({ data }: ProfileCardProp) {
       </div>
       <div className='grid grid-cols-2 py-2 border-t border-b text-sm font-light'>
         <div className='text-center border-r'>
-          <p className="font-semibold">{data.following}</p>
+          <p className='font-semibold'>{data.following}</p>
           <p>Following</p>
         </div>
         <div className='text-center'>
-          <p className="font-semibold">{data.followers}</p>
+          <p className='font-semibold'>{data.followers}</p>
           <p>Followers</p>
         </div>
       </div>
       <div className='flex justify-center items-center py-4'>
-        <button className='text-myRed-1 hover:text-myRed-2 text-sm font-medium'>My Profile</button>
+        <NavLink
+          to={'/profile'}
+          className='text-myRed-1 hover:text-myRed-2 text-sm font-medium'
+        >
+          My Profile
+        </NavLink>
       </div>
     </div>
   );
