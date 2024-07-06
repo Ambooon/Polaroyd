@@ -1,4 +1,6 @@
+import { IoIosAdd } from 'react-icons/io';
 import FollowCard from './components/follow-card/FollowCard';
+import Navbar from './components/navbar/Navbar';
 import PictureFrame from './components/picture-frame/PictureFrame';
 import ProfileCard from './components/profile-card/ProfileCard';
 import { data } from './DummyData';
@@ -22,10 +24,20 @@ export default function App() {
         />
         <FollowCard />
       </section>
-      <section className='col-span-5 columns-3 px-2'>
+      <section className='col-span-5 px-2'>
+        <Navbar />
+        <div className='flex justify-between items-center mt-6 mb-2'>
+          <p className='font-bold text-2xl'>Feed</p>
+          <button className='border border-myRed-1 hover:bg-myRed-2 hover:text-white p-1 rounded-md text-myRed-1 flex items-center text-sm'>
+            <IoIosAdd size={24} />
+            <p>Add Photo</p>
+          </button>
+        </div>
+        <div className='columns-3'>
           {data.map((item, index) => {
-            return <PictureFrame key={index} data={{...item}}/>
+            return <PictureFrame key={index} data={{ ...item }} />;
           })}
+        </div>
       </section>
     </div>
   );
