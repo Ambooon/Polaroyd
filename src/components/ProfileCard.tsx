@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
 type ProfileCardProp = {
   data: {
@@ -14,36 +14,36 @@ type ProfileCardProp = {
 
 export default function ProfileCard({ data }: ProfileCardProp) {
   return (
-    <div className='w-72 min-h-80 max-h-fit rounded-xl overflow-hidden bg-white'>
+    <div className="max-h-fit min-h-80 w-72 overflow-hidden rounded-xl bg-white">
       <img
-        className='w-full h-16 object-cover object-center'
+        className="h-16 w-full object-cover object-center"
         src={data.bannerPicture}
-        alt='Profile Banner Pic'
+        alt="Profile Banner Pic"
       />
       <img
-        className='w-20 h-20 object-cover object-center rounded-full mx-auto -mt-10 mb-2'
+        className="mx-auto -mt-10 mb-2 h-20 w-20 rounded-full object-cover object-center"
         src={data.profilePicture}
-        alt='Profile Picture'
+        alt="Profile Picture"
       />
-      <div className='text-center mb-4 px-4'>
-        <h1 className='font-bold text-lg'>{data.username}</h1>
-        <p className='font-thin text-sm'>@{data.userID}</p>
-        <p className='font-light mt-1 text-sm w-3/4 mx-auto'>{data.bio}</p>
+      <div className="mb-4 px-4 text-center">
+        <h1 className="text-lg font-bold">{data.username}</h1>
+        <p className="text-sm font-thin">@{data.userID}</p>
+        <p className="mx-auto mt-1 w-3/4 text-sm font-light">{data.bio}</p>
       </div>
-      <div className='grid grid-cols-2 py-2 border-t border-b text-sm font-light'>
-        <div className='text-center border-r'>
-          <p className='font-semibold'>{data.following}</p>
+      <div className="grid grid-cols-2 border-b border-t py-2 text-sm font-light">
+        <div className="border-r text-center">
+          <p className="font-semibold">{data.following}</p>
           <p>Following</p>
         </div>
-        <div className='text-center'>
-          <p className='font-semibold'>{data.followers}</p>
+        <div className="text-center">
+          <p className="font-semibold">{data.followers}</p>
           <p>Followers</p>
         </div>
       </div>
-      <div className='flex justify-center items-center py-4'>
+      <div className="flex items-center justify-center py-4">
         <NavLink
-          to={'/profile'}
-          className='text-myRed-1 hover:text-myRed-2 text-sm font-medium'
+          to={"/profile"}
+          className="text-sm font-medium text-myRed-1 hover:text-myRed-2"
         >
           My Profile
         </NavLink>
