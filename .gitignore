@@ -25,4 +25,4 @@ dist-ssr
 todo.txt
 
 # virtual environment
-venv
+.venv
