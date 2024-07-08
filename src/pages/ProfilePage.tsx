@@ -1,40 +1,40 @@
-import { data } from '../DummyData';
-import { userData } from '../DummyProfileData';
-import Navbar from '../components/Navbar';
-import PictureFrame from '../components/PictureFrame';
+import { data } from "../DummyData";
+import { userData } from "../DummyProfileData";
+import Navbar from "../components/Navbar";
+import PictureFrame from "../components/PictureFrame";
 
 export default function ProfilePage() {
   return (
-    <div className='min-h-screen py-4'>
+    <div className="min-h-screen">
       <Navbar />
-      <div className='mt-6 mb-12 max-w-xl mx-auto'>
+      <div className="mx-auto mb-12 mt-6 max-w-xl">
         {/* <img
           className='w-full h-48 object-cover object-bottom'
           src={userData.bannerPicture}
           alt='Banner Picture'
         /> */}
         <img
-          className='w-32 h-32 object-cover object-center rounded-full mx-auto'
+          className="mx-auto h-32 w-32 rounded-full object-cover object-center"
           src={userData.profilePicture}
-          alt='Profile Picture'
+          alt="Profile Picture"
         />
-        <p className='text-center font-bold text-3xl'>{userData.username}</p>
-        <p className='text-center font-light mb-2'>@{userData.userID}</p>
-        <p className='text-center mb-4'>{userData.bio}</p>
-        <p className='text-center font-semibold'>
+        <p className="text-center text-3xl font-bold">{userData.username}</p>
+        <p className="mb-2 text-center font-light">@{userData.userID}</p>
+        <p className="mb-4 text-center">{userData.bio}</p>
+        <p className="text-center font-semibold">
           {userData.followers} followers · {userData.following} following
         </p>
       </div>
       <div>
-        <div className='flex justify-center items-start gap-8 font-semibold mb-4'>
-          <button className='pb-2 border-b-4 border-myNeutral-2'>
+        <div className="mb-4 flex items-start justify-center gap-8 font-semibold">
+          <button className="border-b-4 border-myNeutral-2 pb-2">
             Created
           </button>
           <button>Liked</button>
           <button>Saved</button>
         </div>
       </div>
-      <div className='columns-5 p-4 space-y-4'>
+      <div className="columns-5 space-y-4 p-4">
         {data.map((item, index) => {
           return <PictureFrame key={index} data={{ ...item }} />;
         })}

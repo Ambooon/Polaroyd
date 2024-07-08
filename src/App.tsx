@@ -1,25 +1,27 @@
-import { IoIosAdd } from 'react-icons/io';
-import FollowCard from './components/FollowCard';
-import Navbar from './components/Navbar';
-import PictureFrame from './components/PictureFrame';
-import ProfileCard from './components/ProfileCard';
-import { data } from './DummyData';
-import { userData } from './DummyProfileData';
-import ProfilePage from './pages/ProfilePage';
-import { Routes, Route, NavLink } from 'react-router-dom';
-import UploadPhoto from './components/UploadPhoto';
+import { IoIosAdd } from "react-icons/io";
+import FollowCard from "./components/FollowCard";
+import Navbar from "./components/Navbar";
+import PictureFrame from "./components/PictureFrame";
+import ProfileCard from "./components/ProfileCard";
+import { data } from "./DummyData";
+import { userData } from "./DummyProfileData";
+import ProfilePage from "./pages/ProfilePage";
+import { Routes, Route, NavLink } from "react-router-dom";
+import UploadPhoto from "./components/UploadPhoto";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 
 export default function App() {
   return (
-    <div className='container mx-auto p-4'>
+    <div className="container mx-auto min-h-screen py-4">
       <Routes>
         <Route
-          path='/'
+          path="/"
           element={
             <div>
               <Navbar />
-              <div className='grid grid-cols-7 mt-4'>
-                <section className='col-span-2 h-fit grid gap-4 justify-around mr-auto'>
+              <div className="mt-4 grid grid-cols-7">
+                <section className="col-span-2 mr-auto grid h-fit justify-around gap-4">
                   <ProfileCard
                     data={{
                       ...userData,
@@ -27,15 +29,18 @@ export default function App() {
                   />
                   <FollowCard />
                 </section>
-                <section className='col-span-5 mt-6'>
-                  <div className='flex justify-between items-center mb-2'>
-                    <p className='font-bold text-2xl'>Feed</p>
-                    <NavLink to={'/upload'} className='border border-myRed-1 hover:bg-myRed-2 hover:text-white p-1 rounded-md text-myRed-1 flex items-center text-sm'>
+                <section className="col-span-5 mt-6">
+                  <div className="mb-2 flex items-center justify-between">
+                    <p className="text-2xl font-bold">Feed</p>
+                    <NavLink
+                      to={"/upload"}
+                      className="flex items-center rounded-md border border-myRed-1 p-1 text-sm text-myRed-1 hover:bg-myRed-2 hover:text-white"
+                    >
                       <IoIosAdd size={24} />
                       <p>Add Photo</p>
                     </NavLink>
                   </div>
-                  <div className='columns-2 lg:columns-3 space-y-4'>
+                  <div className="columns-2 space-y-4 lg:columns-3">
                     {data.map((item, index) => {
                       return <PictureFrame key={index} data={{ ...item }} />;
                     })}
@@ -45,8 +50,10 @@ export default function App() {
             </div>
           }
         />
-        <Route path='/profile' element={<ProfilePage />} />
-        <Route path='/upload' element={<UploadPhoto />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/upload" element={<UploadPhoto />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
       </Routes>
     </div>
   );
