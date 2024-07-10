@@ -12,7 +12,7 @@ type PictureFrameProp = {
 
 export default function PictureFrame({ data }: PictureFrameProp) {
   return (
-    <article className="break-inside-avoid-column bg-white p-4 sm:shadow-md">
+    <article className="break-inside-avoid-column bg-white p-4 shadow-md">
       <div className="mb-2 flex items-center justify-between">
         <div className="flex items-center gap-x-2">
           <img
@@ -29,7 +29,7 @@ export default function PictureFrame({ data }: PictureFrameProp) {
           <CiHeart size={28} />
         </button>
       </div>
-      <img className="mb-4 max-h-96" src={data.postPicture} alt="Post Picture" />
+      <img className="mb-4 min-h-40 max-h-96 min-w-64 object-cover origin-center" src={data.postPicture} alt="Post Picture" />
       <p className="text-center">{data.caption}</p>
     </article>
   );
