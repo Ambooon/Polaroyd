@@ -1,6 +1,6 @@
 import { data } from "../DummyData";
 import { userData } from "../DummyProfileData";
-import Navbar from "../components/Navbar";
+import { Navbar, NavbarMobile } from "../components/Navbar";
 import PictureFrame from "../components/PictureFrame";
 
 export default function ProfilePage() {
@@ -34,10 +34,13 @@ export default function ProfilePage() {
           <button>Saved</button>
         </div>
       </div>
-      <div className="items-center gap-4 pb-16 pt-8 columns-2xs space-y-8 md:pt-0">
+      <div className="columns-2xs items-center gap-4 space-y-8 pb-16 pt-8 md:pt-0">
         {data.map((item, index) => {
           return <PictureFrame key={index} data={{ ...item }} />;
         })}
+      </div>
+      <div className="fixed bottom-0 left-0 z-50 w-screen md:hidden">
+        <NavbarMobile />
       </div>
     </div>
   );
