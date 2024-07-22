@@ -5,9 +5,9 @@ import PictureFrame from "../components/PictureFrame";
 
 export default function ProfilePage() {
   return (
-    <div className="min-h-screen">
+    <div className="container mx-auto min-h-screen">
       <Navbar />
-      <div className="mx-auto mb-12 mt-6 max-w-xl">
+      <div className="mx-auto mb-12 max-w-xl pt-8 md:mt-6 md:pt-0">
         {/* <img
           className='w-full h-48 object-cover object-bottom'
           src={userData.bannerPicture}
@@ -34,7 +34,7 @@ export default function ProfilePage() {
           <button>Saved</button>
         </div>
       </div>
-      <div className="columns-5 space-y-4 p-4">
+      <div className="items-center gap-4 pb-16 pt-8 columns-2xs space-y-8 md:pt-0">
         {data.map((item, index) => {
           return <PictureFrame key={index} data={{ ...item }} />;
         })}
