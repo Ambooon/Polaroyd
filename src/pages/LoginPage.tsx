@@ -2,10 +2,10 @@ import { NavLink } from "react-router-dom";
 
 export default function LoginPage() {
   return (
-    <div className="mx-auto grid max-h-fit max-w-4xl grid-cols-2 items-center">
-      <div className="">
+    <div className="container mx-auto grid h-screen grid-cols-2 items-center">
+      <div className="flex justify-center items-center">
         <img
-          className="h-full w-full origin-center object-cover"
+          className="h-96"
           src="https://i.pinimg.com/originals/2f/9d/dc/2f9ddc7304a5b6ba6e27aacac8626704.jpg"
           alt="Background Image"
         />
