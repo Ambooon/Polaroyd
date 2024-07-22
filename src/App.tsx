@@ -5,6 +5,7 @@ import RegisterPage from "./pages/RegisterPage";
 import ChatPage from "./pages/ChatPage";
 import HomePage from "./pages/HomePage";
 import UploadPhotoPage from "./pages/UploadPhotoPage";
+import NotificationPage from "./pages/NotificationPage";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/message" element={<ChatPage />} />
+      <Route path="/notification" element={<NotificationPage />} />
     </Routes>
   );
 }
